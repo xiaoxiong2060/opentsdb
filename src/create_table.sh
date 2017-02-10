@@ -33,16 +33,24 @@ esac
 hbh=$HBASE_HOME
 unset HBASE_HOME
 exec "$hbh/bin/hbase" shell <<EOF
+disable '$UID_TABLE'
+drop '$UID_TABLE'
 create '$UID_TABLE',
   {NAME => 'id', COMPRESSION => '$COMPRESSION', BLOOMFILTER => '$BLOOMFILTER'},
   {NAME => 'name', COMPRESSION => '$COMPRESSION', BLOOMFILTER => '$BLOOMFILTER'}
 
+disable '$TSDB_TABLE'
+drop '$TSDB_TABLE'
 create '$TSDB_TABLE',
   {NAME => 't', VERSIONS => 1, COMPRESSION => '$COMPRESSION', BLOOMFILTER => '$BLOOMFILTER'}
-  
+
+disable '$TREE_TABLE'
+drop '$TREE_TABLE'
 create '$TREE_TABLE',
   {NAME => 't', VERSIONS => 1, COMPRESSION => '$COMPRESSION', BLOOMFILTER => '$BLOOMFILTER'}
-  
+
+disable '$META_TABLE'
+drop '$META_TABLE'
 create '$META_TABLE',
   {NAME => 'name', COMPRESSION => '$COMPRESSION', BLOOMFILTER => '$BLOOMFILTER'}
 EOF

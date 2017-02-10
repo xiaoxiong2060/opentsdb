@@ -94,7 +94,7 @@ import com.stumbleupon.async.Deferred;
  */
 @Ignore
 public final class MockBase {
-  private static final Charset ASCII = Charset.forName("ISO-8859-1");
+  private static final Charset ASCII = Charset.forName("UTF8");
   private TSDB tsdb;
   
   /** Gross huh? <table, <cf, <row, <qual, <ts, value>>>>>

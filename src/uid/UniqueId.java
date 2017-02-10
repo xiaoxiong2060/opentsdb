@@ -66,7 +66,7 @@ public final class UniqueId implements UniqueIdInterface {
   }
   
   /** Charset used to convert Strings to byte arrays and back. */
-  private static final Charset CHARSET = Charset.forName("ISO-8859-1");
+  private static final Charset CHARSET = Charset.forName("UTF8");
   /** The single column family used by this class. */
   private static final byte[] ID_FAMILY = toBytes("id");
   /** The single column family used by this class. */
