@@ -19,10 +19,10 @@
   
   <!-- Appender to write OpenTSDB data to a set of rotating log files -->
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-      <file>/var/log/opentsdb/opentsdb.log</file>
+      <file>/home/ewallet/soft/opentsdb/build/log/opentsdb.log</file>
       <append>true</append>
       <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-         <fileNamePattern>/home/y/logs/opentsdb2/opentsdb.log.%i</fileNamePattern>
+         <fileNamePattern>/home/ewallet/soft/opentsdb/build/log/opentsdb.log.%i</fileNamePattern>
          <minIndex>1</minIndex>
          <maxIndex>4</maxIndex>
       </rollingPolicy>
@@ -39,11 +39,11 @@
   <!-- Appender for writing full and completed queries to a log file. To use it, make
        sure to set the "level" to "INFO" in QueryLog below. -->
   <appender name="QUERY_LOG" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <file>/var/log/opentsdb/queries.log</file>
+    <file>/home/ewallet/soft/opentsdb/build/log/queries.log</file>
     <append>true</append>
 
     <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
-        <fileNamePattern>/var/log/opentsdb/queries.log.%i</fileNamePattern>
+        <fileNamePattern>/home/ewallet/soft/opentsdb/build/log/queries.log.%i</fileNamePattern>
         <minIndex>1</minIndex>
         <maxIndex>4</maxIndex>
     </rollingPolicy>
